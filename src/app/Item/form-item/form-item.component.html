@@ -1,0 +1,103 @@
+<table border="0px" style="width: 100%;">
+    <tr>
+        <td style="width: 60%;">
+
+            <div style="width: 90%;">
+                <form (submit)="saveChangesForm()" [formGroup]="form">
+            
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Name*</mat-label>
+                        <input formControlName="itemName" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldName()}}</mat-error>
+                    </mat-form-field>
+            
+                    <br>
+            
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Scientific Name*</mat-label>
+                        <input formControlName="scientificName" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldScientificName()}}</mat-error>
+                    </mat-form-field>
+                
+                    <br>
+            
+                    <mat-form-field style="width: 45%;" appearance="outline">
+                        <mat-label>Item Type*</mat-label>
+                        <mat-select formControlName="itemType">
+                          <mat-option *ngFor="let itemtype of type" [value]="itemtype.name">
+                            {{itemtype.name}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>{{GetErrorMessageFieldItemType()}}</mat-error>
+                      </mat-form-field> &nbsp;
+            
+                      <mat-form-field style="width: 52.5%;" appearance="outline">
+                        <mat-label>Weight(kg)*</mat-label>
+                        <input formControlName="weight" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldWeight()}}</mat-error>
+                    </mat-form-field>
+            
+                    <br>
+            
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Buying Price(LKR)*</mat-label>
+                        <input formControlName="buyingPrice" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldBuyingPrice()}}</mat-error>
+                    </mat-form-field>
+            
+                    <br>
+            
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Supplier*</mat-label>
+                        <mat-select formControlName="supplierID">
+                          <mat-option *ngFor="let supplier of supplier" [value]="supplier.supplierID">
+                            {{supplier.firstName + " " + supplier.lastName}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>{{GetErrorMessageFieldSupplier()}}</mat-error>
+                      </mat-form-field>
+            
+                      <br>
+                
+                      <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Stock*</mat-label>
+                        <mat-select formControlName="stockID">
+                          <mat-option *ngFor="let stock of stock" [value]="stock.stockID">
+                            {{stock.placeName}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>{{GetErrorMessageFieldStock()}}</mat-error>
+                      </mat-form-field>
+            
+                      <br>
+            
+                      <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Company*</mat-label>
+                        <mat-select formControlName="companyID">
+                          <mat-option *ngFor="let company of company" [value]="company.companyID">
+                            {{company.companyName}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>{{GetErrorMessageFieldCompany()}}</mat-error>
+                      </mat-form-field>
+                
+                    <div>
+                        <br>
+                        <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button> &nbsp;
+                        <button type="button" mat-stroked-button color="warn" routerLink="/item" (click)="clear()">Cancel</button>
+                    </div>
+                
+                </form>
+                
+            </div>
+        </td>
+
+        <td style="width: 10%;">
+
+      </td>
+
+        <td style="width: 30%;">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/9dff3192589605.5e4ebd8bc7e7a.png" alt="" width="500" height="700">
+        </td>
+    </tr>
+</table>

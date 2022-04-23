@@ -1,0 +1,115 @@
+<form (submit)="saveChangesForm()" [formGroup]="form">
+    <table border="0px" style="width: 100%;">
+        <tr>
+            <td style="width: 60%;">
+
+                <div style="width: 90%;">
+                        
+                        <mat-form-field style="width: 52.5%;" appearance="outline">
+                            <mat-label>Company Name*</mat-label>
+                            <input type="text" formControlName="companyName" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldCompanyName()}}</mat-error>
+                        </mat-form-field> &nbsp;
+
+                        <mat-form-field style="width: 45%;" appearance="outline">
+                            <mat-label>Company Type*</mat-label>
+                            <mat-select formControlName="companyType">
+                              <mat-option *ngFor="let type of type" [value]="type.name">
+                                {{type.name}}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error>{{GetErrorMessageFieldCompanyType()}}</mat-error>
+                          </mat-form-field>
+                
+                        <br>
+                        
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Phone Number*</mat-label>
+                            <input formControlName="phoneNumber" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldPhoneNumber()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Email*</mat-label>
+                            <input type="email" formControlName="email" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldEmail()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Address NO*</mat-label>
+                            <input formControlName="addressNO" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldAddressNO()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>First Address Line*</mat-label>
+                            <input formControlName="firstAddressLine" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldFirstAddressLine()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Second Address Line</mat-label>
+                            <input formControlName="secondAddressLine" autocomplete="off" matInput/>
+                            <mat-error></mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 45%;" appearance="outline">
+                            <mat-label>City*</mat-label>
+                            <input formControlName="city" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldCity()}}</mat-error>
+                        </mat-form-field> &nbsp;
+
+                        <mat-form-field style="width: 52.5%;" appearance="outline">
+                            <mat-label>State*</mat-label>
+                            <input formControlName="state" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldState()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 45%;" appearance="outline">
+                            <mat-label>Zip Postal Code*</mat-label>
+                            <input formControlName="zipPostalCode" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldZipPostalCode()}}</mat-error>
+                        </mat-form-field> &nbsp;
+
+                        <mat-form-field style="width: 52.5%;" appearance="outline">
+                            <mat-label>Country*</mat-label>
+                            <input formControlName="country" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldCountry()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Website*</mat-label>
+                            <input formControlName="website" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldWebsite()}}</mat-error>
+                        </mat-form-field>
+                    
+                        <div>
+                            <br>
+                            <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button> &nbsp;
+                            <button type="button" mat-stroked-button color="warn" routerLink="/company" (click)="clear()">Cancel</button>
+                        </div>
+                    
+                </div>
+            </td>
+
+
+            <td style="width: 40%;" align="right">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cc44ed72969113.5bfae0c6087d8.gif" alt="" width="550px" height="550px" align="right">
+            </td>
+        </tr>
+    </table>
+</form>

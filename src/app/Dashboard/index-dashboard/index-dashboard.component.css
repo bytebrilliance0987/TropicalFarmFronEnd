@@ -1,0 +1,77 @@
+body{
+    display: flex;
+}
+
+.space{
+    height: 100px;
+}
+
+table{
+    width: 80%;
+}
+
+.box{
+    position: relative;
+    width: 350px;
+    height: 300px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+#weight{
+    width: 100%;
+    background-color: navy;
+}
+
+#buyingprice{
+    width: 100%;
+    background-color: beige;
+}
+
+#box-for-item{
+    background-color: blue;
+}
+
+span{
+    font: optional;
+    font-size: x-large;
+    font-weight: lighter;
+    font-display: initial;
+    color: cadetblue;
+}
+
+#span-for-item-weight{
+    color: white;
+}
+
+#span-for-item-buyingprice{
+    color: darkblue;
+}
+
+.count{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 0px;
+    margin-right: 100px;
+    font-size: 200px;
+}
+
+.total-font-size{
+    font-size: 150px;
+    font-weight: normal;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    opacity: 0.8;
+}
+
+#countOfItem{
+    color: white;
+}
+
+#countOfSupplierStockCompany{
+    color: blueviolet;
+}
+
+#total{
+    color: darkgoldenrod;
+}

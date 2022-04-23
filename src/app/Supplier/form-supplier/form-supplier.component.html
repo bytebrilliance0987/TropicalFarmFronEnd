@@ -1,0 +1,108 @@
+<form (submit)="saveChangesForm()" [formGroup]="form">
+    <table border="0px" style="width: 100%;">
+        <tr>
+            <td style="width: 60%;">
+
+                <div style="width: 90%;">
+                        
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>NIC*</mat-label>
+                            <input formControlName="nic" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldNIC()}}</mat-error>
+                        </mat-form-field>
+                
+                        <br>
+                        
+                        <mat-form-field style="width: 45%;" appearance="outline">
+                            <mat-label>First Name*</mat-label>
+                            <input type="text" formControlName="firstName" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldFirstName()}}</mat-error>
+                        </mat-form-field> &nbsp;
+
+                        <mat-form-field style="width: 52.5%;" appearance="outline">
+                            <mat-label>Last Name*</mat-label>
+                            <input type="text" formControlName="lastName" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldLastName()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Phone Number*</mat-label>
+                            <input formControlName="phoneNumber" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldPhoneNumber()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Email*</mat-label>
+                            <input type="email" formControlName="email" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldEmail()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Address NO*</mat-label>
+                            <input formControlName="addressNO" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldAddressNO()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>First Address Line*</mat-label>
+                            <input formControlName="firstAddressLine" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldFirstAddressLine()}}</mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Second Address Line</mat-label>
+                            <input formControlName="secondAddressLine" autocomplete="off" matInput/>
+                            <mat-error></mat-error>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-form-field style="width: 45%;" appearance="outline">
+                            <mat-label>City*</mat-label>
+                            <input formControlName="city" autocomplete="off" matInput/>
+                            <mat-error>{{GetErrorMessageFieldCity()}}</mat-error>
+                        </mat-form-field> &nbsp;
+
+                        
+
+                        <mat-form-field style="width: 52.5%;" appearance="outline">
+                            <mat-label>District*</mat-label>
+                            <mat-select formControlName="district">
+                              <mat-option *ngFor="let district of district" [value]="district.name">
+                                {{district.name}}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error>{{GetErrorMessageFieldDistrict()}}</mat-error>
+                          </mat-form-field>
+
+                        <br>
+                    
+                        <div>
+                            <br>
+                            <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button> &nbsp;
+                            <button type="button" mat-stroked-button color="warn" routerLink="/supplier" (click)="clear()">Cancel</button>
+                        </div>
+                    
+                </div>
+            </td>
+
+            <td style="width: 10%;">
+
+        </td>
+
+            <td style="width: 30%;">
+                <app-input-image [URLCurrentImage]="model?.ProfilePicture" (onImageSelected)="onImageSelected($event)"></app-input-image>
+            </td>
+        </tr>
+    </table>
+</form>

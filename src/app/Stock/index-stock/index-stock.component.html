@@ -1,0 +1,93 @@
+<div class="container">
+
+    <h1>Stock</h1>
+
+    <div class="container">
+        <span><button type="button" mat-raised-button color="primary" routerLink="/stock/addnew">Add new +</button></span>
+        <span *ngIf="viewstock.length > 0">
+          <mat-form-field appearance="outline" class="search">
+            <input type="text" [(ngModel)]="searchKey" placeholder="Search stock places..." autocomplete="off" matInput>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="searchClear()"><mat-icon>close</mat-icon></button>
+          </mat-form-field>
+        </span>
+    </div>
+    
+</div>
+
+<div align="center" *ngIf="viewstock.length < 0">
+    <img src="https://cdn.dribbble.com/users/1753953/screenshots/3818675/animasi-emptystate.gif" /><br><br>
+    <h1 style="font-size: 50px; font-weight: bold; color: skyblue;">Nothing to show......</h1>
+</div>
+
+<div align="center">
+  <mat-spinner  *ngIf="viewstock.length == 0"></mat-spinner>
+</div>
+  
+  <div class="information" *ngIf="viewstock.length > 0">
+      <table mat-table [dataSource]="viewstock | filter:searchKey | paginate: { itemsPerPage: 5, currentPage: p}" class="mat-elevation-z8 table-index">
+          
+            <ng-container matColumnDef="PlaceName">
+              <th mat-header-cell *matHeaderCellDef>Place Name</th>
+              <td mat-cell *matCellDef="let element"><b> {{element.placeName}} </b></td>
+            </ng-container>
+  
+            <ng-container matColumnDef="AddressNO">
+              <th mat-header-cell *matHeaderCellDef>Address NO</th>
+              <td mat-cell *matCellDef="let element"> {{element.addressNO}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="FirstAddressLine">
+              <th mat-header-cell *matHeaderCellDef>First Address Line</th>
+              <td mat-cell *matCellDef="let element"> {{element.firstAddressLine}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="SecondAddressLine">
+              <th mat-header-cell *matHeaderCellDef>Second Address Line</th>
+              <td mat-cell *matCellDef="let element"> {{element.secondAddressLine}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="City">
+              <th mat-header-cell *matHeaderCellDef>City</th>
+              <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="District">
+              <th mat-header-cell *matHeaderCellDef>District</th>
+              <td mat-cell *matCellDef="let element"> {{element.district}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="ZipPostalCode">
+              <th mat-header-cell *matHeaderCellDef>Zip/Postal Code</th>
+              <td mat-cell *matCellDef="let element"> {{element.zipPostalCode}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="AddedDate">
+              <th mat-header-cell *matHeaderCellDef>Added Date</th>
+              <td mat-cell *matCellDef="let element"><i> {{element.addedDate}} </i></td>
+            </ng-container>
+  
+            <ng-container matColumnDef="Addedtime">
+              <th mat-header-cell *matHeaderCellDef>Added Time</th>
+              <td mat-cell *matCellDef="let element"><i> {{element.addedtime}} </i></td>
+            </ng-container>
+  
+            <ng-container matColumnDef="Actions">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td align="right" mat-cell *matCellDef="let element">
+                <a type="button" class="btnmargin" href="https://www.google.com/maps/place/{{element.city}}" target="_blank" color="primary" mat-fab><mat-icon>place</mat-icon></a>
+                <button type="button" class="btnmargin" routerLink="/stock/edit/{{element.stockID}}/" mat-fab><mat-icon>edit</mat-icon></button>
+                <button type="button" class="btnmargin" color="warn" (click)="DeleteStock(element.stockID)" mat-fab><mat-icon>delete</mat-icon></button>
+              </td>
+            </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+          <tr mat-row *matRowDef="let column; columns: columnsToDisplay"></tr>
+  
+      </table>
+
+      <div class="mat-elevation-z8" id="pagination" align="center">
+        <br>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+      
+  </div>

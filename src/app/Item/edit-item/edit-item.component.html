@@ -1,0 +1,10 @@
+<div class="container">
+
+    <h2>Edit Item</h2>
+
+    <div class="container">
+        <app-form-item *ngIf="model" [model]="model" (onSaveChanges)="saveChanges($event)"></app-form-item>
+        <mat-spinner *ngIf="!model"></mat-spinner>
+    </div>
+
+</div>

@@ -1,0 +1,97 @@
+<div class="space"></div>
+
+<table align="center" border="0px">
+    <tr align="center">
+        <td *ngIf="countOfItemsinStocks() > 0">
+            <div class="box" id="box-for-item">
+                <div class="count" id="countOfItem">
+                    {{ countOfItemsinStocks() | number }}
+                </div>
+                <span id="span-for-item-weight">Available In Stock Now</span>
+            </div>
+        </td>
+
+        <td style="width: 100px;"></td>
+                
+        <td *ngIf="countOfSoldItems() > 0">
+            <div class="box" id="box-for-item">
+                <div class="count" id="countOfItem">
+                    {{ countOfSoldItems() | number }}
+                </div>
+                <span id="span-for-item-weight">Number of Sold Items</span>
+            </div>
+        </td>
+
+        <td style="width: 100px;"></td>
+
+        <td *ngIf="countOfSuppliers() > 0">
+            <div class="box">
+                <div class="count" id="countOfSupplierStockCompany">
+                    {{ countOfSuppliers() | number }}
+                </div>
+                <span>Active Suppliers</span>
+            </div>
+        </td>
+
+        <td style="width: 100px;"></td>
+
+        <td *ngIf="countOfStocks() > 0">
+            <div class="box">
+                <div class="count" id="countOfSupplierStockCompany">
+                    {{ countOfStocks() | number }}
+                </div>
+                <span>Available Stock Places</span>
+            </div>
+        </td>
+
+        <td style="width: 100px;"></td>
+
+        <td *ngIf="countOfCompanies() > 0">
+            <div class="box">
+                <div class="count" id="countOfSupplierStockCompany">
+                    {{ countOfCompanies() | number }}
+                </div>
+                <span>Number of Companies</span>
+            </div>
+        </td>
+
+    </tr>
+</table>
+
+<div class="space"></div>
+
+<table align="center" border="0px" style="width: 92%;">
+    <tr align="center">
+        <td>
+            <div class="box" id="weight">
+                <div class="count total-font-size" id="countOfSupplierStockCompany">
+                    {{ totalAvailableWeight() }}
+                </div>
+                <span id="span-for-item-weight">The total available weight in stock now (Kg)</span>
+            </div>
+        </td>
+
+        <td style="width: 10px;"></td>
+                
+        <td>
+            <div class="box" id="weight">
+                <div class="count total-font-size" id="countOfSupplierStockCompany">
+                    {{ totalSoldWeight() }}
+                </div>
+                <span id="span-for-item-weight">The total sold weight in {{ ThisYear() }} (Kg)</span>
+            </div>
+        </td>
+
+        <td style="width: 10px;"></td>
+                
+        <td>
+            <div class="box" id="buyingprice">
+                <div class="count total-font-size" id="total">
+                    {{ totalTotalBuyingPrice() }}
+                </div>
+                <span id="span-for-item-buyingprice">The total buying price of available items (Rs)</span>
+            </div>
+        </td>
+
+    </tr>
+</table>

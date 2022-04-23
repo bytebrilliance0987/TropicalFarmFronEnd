@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <span><button type="button" mat-button routerLink="dashboard"><mat-icon>dashboard</mat-icon> &nbsp; Dashboard</button></span>
+    <span><button type="button" mat-button routerLink="item"><mat-icon>category</mat-icon> &nbsp; Item</button></span>
+    <span><button type="button" mat-button routerLink="supplier"><mat-icon>person</mat-icon> &nbsp; Supplier</button></span>
+    <span><button type="button" mat-button routerLink="stock"><mat-icon>home</mat-icon> &nbsp; Stock</button></span>
+    <span><button type="button" mat-button routerLink="company"><mat-icon>business</mat-icon> &nbsp; Company</button></span>
+    <span align="right" class="right-content">
+        <span><img [src]="user.photoUrl" /></span>
+        Hi {{user.name}} &nbsp; &nbsp;
+        <span><a type="button" href="https://www.qr-code-generator.com/" target="popup" onclick="window.open('https://www.qr-code-generator.com/','popup','width=600,height=600');" mat-mini-fab color="basic"><mat-icon>qr_code</mat-icon></a> &nbsp; </span>
+        <span><a type="button" href="https://www.17track.net/en" target="_blank" mat-mini-fab color="basic"><mat-icon>travel_explore</mat-icon></a> &nbsp; </span>
+        <span><a type="button" href="https://planefinder.net/" target="_blank" mat-mini-fab color="basic"><mat-icon>flight</mat-icon></a> &nbsp; </span>
+        <span><a type="button" href="https://mail.google.com/mail/u/0/" target="_blank" mat-mini-fab color="basic"><mat-icon>mail</mat-icon></a> &nbsp; </span>
+        <span><a type="button" href="https://slpost.gov.lk/si/" target="_blank" mat-mini-fab color="basic"><mat-icon>other_houses</mat-icon></a> &nbsp; &nbsp;</span>
+        <span><a type="button" href="https://docs.google.com/spreadsheets/u/0/" target="_blank" mat-mini-fab color="basic"><mat-icon>description</mat-icon></a> &nbsp; &nbsp;</span>
+        <span><a type="button" href="https://identify.plantnet.org/" target="_blank" mat-mini-fab color="basic"><mat-icon>grass</mat-icon></a> &nbsp; &nbsp;</span>
+        {{Today}} &nbsp; &nbsp;
+        <mat-icon>light_mode</mat-icon>&nbsp;<app-dark-mode-toggle></app-dark-mode-toggle>&nbsp;<mat-icon>dark_mode</mat-icon>&nbsp; &nbsp;
+        <a href="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:4200" mat-flat-button color="basic"><mat-icon>logout</mat-icon></a>
+    </span>
+</mat-toolbar>

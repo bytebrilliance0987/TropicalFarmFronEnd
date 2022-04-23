@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.min';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body.dark-mode {
+    background-color: #2d3436;
+    color: #dfe6e9;
+  }

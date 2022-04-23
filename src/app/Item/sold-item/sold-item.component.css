@@ -1,0 +1,59 @@
+.container{
+    margin: 30px;
+}
+
+.search{
+    margin-left: 1rem;
+    width: 50%;
+    color: blueviolet;
+    font-size: medium;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.viewmargin{
+    margin: 5px;
+}
+
+.table-index{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.information{
+    margin-top: 10px;
+    margin-left: 80px;
+    width: 92%;
+}
+
+table td{
+    color: gray;
+}
+
+img{
+    border-radius: 50%;
+    height: 500px;
+    width: 600px;
+}
+
+.btnmargin{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 7px;
+}
+
+.fkbuttons{
+    color: black;
+    background-color: yellow;
+}
+
+.emailbutton{
+    color: white;
+    background-color: blue;
+}
+
+#pagination{
+    height: 50px;
+    background-color: blueviolet;
+    color: white;
+}

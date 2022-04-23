@@ -1,0 +1,85 @@
+<table border="0px" style="width: 100%;">
+    <tr>
+        <td style="width: 60%;">
+
+            <div style="width: 90%;">
+                <form (submit)="saveChangesForm()" [formGroup]="form">
+            
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Place Name*</mat-label>
+                        <input formControlName="placeName" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldPlaceName()}}</mat-error>
+                    </mat-form-field>
+            
+                    <br>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Address NO*</mat-label>
+                        <input formControlName="addressNO" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldAddressNO()}}</mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>First Address Line*</mat-label>
+                        <input formControlName="firstAddressLine" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldFirstAddressLine()}}</mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Second Address Line*</mat-label>
+                        <input formControlName="secondAddressLine" autocomplete="off" matInput />
+                        <mat-error></mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>City*</mat-label>
+                        <input formControlName="city" autocomplete="off" matInput />
+                        <mat-error>{{GetErrorMessageFieldCity()}}</mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>Zip Postal Code*</mat-label>
+                        <input formControlName="zipPostalCode" autocomplete="off" matInput/>
+                        <mat-error>{{GetErrorMessageFieldZipPostalCode()}}</mat-error>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>District*</mat-label>
+                        <mat-select formControlName="district">
+                          <mat-option *ngFor="let district of district" [value]="district.name">
+                            {{district.name}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>{{GetErrorMessageFieldDistrict()}}</mat-error>
+                      </mat-form-field>
+                
+                    <div>
+                        <br>
+                        <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button> &nbsp;
+                        <button type="button" mat-stroked-button color="warn" routerLink="/stock" (click)="clear()">Cancel</button>
+                    </div>
+                
+                </form>
+                
+            </div>
+        </td>
+
+        <td style="width: 10%;">
+
+      </td>
+
+        <td style="width: 30%;">
+            <img src="https://media.giphy.com/media/l0IylQoMkcbZUbtKw/giphy.gif" alt="" width="600px" height="500px">
+        </td>
+    </tr>
+</table>

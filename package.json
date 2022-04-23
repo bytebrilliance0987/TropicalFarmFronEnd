@@ -1,0 +1,53 @@
+{
+  "name": "tropical-farm-frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular-cool/social-login-buttons": "^13.0.0",
+    "@angular/animations": "~12.2.0",
+    "@angular/cdk": "^12.2.13",
+    "@angular/common": "~12.2.0",
+    "@angular/compiler": "~12.2.0",
+    "@angular/core": "~12.2.0",
+    "@angular/forms": "~12.2.0",
+    "@angular/localize": "~12.2.0",
+    "@angular/material": "^12.2.13",
+    "@angular/platform-browser": "~12.2.0",
+    "@angular/platform-browser-dynamic": "~12.2.0",
+    "@angular/router": "~12.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "angular-cli-ghpages": "^1.0.0",
+    "angular-dark-mode": "^3.0.2",
+    "angularx-social-login": "^4.0.1",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.5.0",
+    "mat-table-exporter": "^10.2.4",
+    "ng2-search-filter": "^0.5.1",
+    "ngx-pagination": "^5.1.1",
+    "rxjs": "~6.6.0",
+    "sweetalert2": "^11.4.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.2.8",
+    "@angular/cli": "~12.2.8",
+    "@angular/compiler-cli": "~12.2.0",
+    "@types/jasmine": "~3.8.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~3.8.0",
+    "karma": "^6.3.16",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.3.5"
+  }
+}

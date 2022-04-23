@@ -1,0 +1,18 @@
+<div>
+    <input type="file" hidden #selectImage accept="image/png image/jpeg" (change)="change($event)" required/>
+    <button type="button" mat-raised-button (click)="selectImage.click()">Select Image</button>
+</div>
+
+<div>
+    <div *ngIf="!imagetoBase64">
+        <img src="https://media.giphy.com/media/ZXkraFrlIW1D25M6ZJ/giphy.gif"/>
+    </div>
+
+    <div *ngIf="imagetoBase64">
+        <img [src] = "imagetoBase64" /><br>
+    </div>
+
+    <div *ngIf="URLCurrentImage">
+        <img [src] = "URLCurrentImage" /><br>
+    </div>
+</div>
